@@ -1,0 +1,13 @@
+1、运行main.m执行主程序，在其中设置auto_flag变量来决定是自动选点还是手动选点（手动选点已选好，保存在select_ps_x.mat中）
+2、可运行markPoints.m来选点，结果需要保存在select_ps_x.mat中。
+3、代码架构：
+main.m：主函数
+undistort.m：使用手动选点存好的坐标点将书页图片展平
+auto_point.m：自动选点并将书页图片展平
+rbfwarp2d.m：使用TPS薄板样条插值将图片进行弯曲变换
+stitch.m：将两张图片进行拼接
+sift.m：sift算法实现
+vlfeat-0.9.21-bin文件夹：vl包的MATLAB版本，sift算法的实现
+get_stitch_mask.m：得到权重矩阵，多频段融合算法用到
+multiFre_mix.m：多频段融合算法
+pad_resize：将图片缩小、补零边
